@@ -1,0 +1,36 @@
+     A                                      REF(FACCAB)
+     A          R ENCABE                    SKIPB(3)
+     A                                  2   'FAC010'
+     A                                   40 'FACTURACION DE PEDIDOS SURTIDOS'
+     A                                  100 'FECHA'
+     A                                  106 DATE EDTCDE(Y)
+     A                                  118 'HOJA'
+     A                                  123 PAGNBR EDTCDE(3)
+     A                                  2   'MODO:' SPACEB(1)
+     A            WMODO          1      8
+     A                                  2   'FACTURA   PEDIDO  CLIENTE'
+     A                                      SPACEB(2)
+     A                                   40 'SUBTOTAL      DESCUENTO'
+     A                                   72 'IVA          TOTAL  EST'
+     A          R DETALL                    SPACEB(1)
+     A            FCNUMF    R           2   EDTCDE(Z)
+     A            FCNUMP    R           12  EDTCDE(Z)
+     A            FCCLAV    R           20
+     A            FCSUBT    R           34  EDTCDE(J)
+     A            FCDESC    R           51  EDTCDE(J)
+     A            FCIVA     R           66  EDTCDE(J)
+     A            FCTOTA    R           81  EDTCDE(J)
+     A            FCESTA    R           98
+     A          R ERRLIN                    SPACEB(1)
+     A                                  2   '*** ERROR PEDIDO'
+     A            WPEDER         7S 0   20  EDTCDE(Z)
+     A            WMSGER        40      30
+     A          R TOTALE                    SPACEB(2)
+     A                                  2   'FACTURAS GENERADAS'
+     A            WCTFAC         7S 0   22  EDTCDE(Z)
+     A                                  32  'RETENIDAS'
+     A            WCTRET         7S 0   42  EDTCDE(Z)
+     A                                  52  'ERRORES'
+     A            WCTERR         7S 0   60  EDTCDE(Z)
+     A                                  2   'IMPORTE TOTAL' SPACEB(1)
+     A            WGRTOT        13S 2   22  EDTCDE(J)

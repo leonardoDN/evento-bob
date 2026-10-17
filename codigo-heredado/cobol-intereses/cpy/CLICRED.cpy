@@ -1,0 +1,23 @@
+000010 01  REG-CREDITO.
+000020     05  CR-NUM-CRED           PIC 9(10).
+000030     05  CR-NUM-CLIE           PIC 9(08).
+000040     05  CR-PRODUCTO           PIC X(03).
+000050     05  CR-TIPO-CLI           PIC X(01).
+000060         88  CR-EMPLEADO          VALUE 'E'.
+000070         88  CR-PENSIONADO        VALUE 'P'.
+000080         88  CR-PREFERENTE        VALUE 'V'.
+000090         88  CR-NORMAL            VALUE 'N'.
+000100     05  CR-SALDO-CAP          PIC S9(11)V99 COMP-3.
+000110     05  CR-TASA-PACT          PIC 9(03)V9999 COMP-3.
+000120     05  CR-FEC-ULT-CORTE      PIC 9(06).
+000130     05  CR-FEC-ULT-CORTE-R    REDEFINES CR-FEC-ULT-CORTE.
+000140         10  CR-UC-AA             PIC 9(02).
+000150         10  CR-UC-MM             PIC 9(02).
+000160         10  CR-UC-DD             PIC 9(02).
+000170     05  CR-DIAS-ATRASO        PIC 9(04).
+000180     05  CR-ANTIG-ANIOS        PIC 9(02).
+000190     05  CR-INT-ACUM-ANIO      PIC S9(11)V99 COMP-3.
+000200     05  CR-INT-ORDEN          PIC S9(11)V99 COMP-3.
+000210     05  CR-MARCA              PIC X(01).
+000220     05  CR-SUCURSAL           PIC 9(04).
+000230     05  FILLER                PIC X(16).

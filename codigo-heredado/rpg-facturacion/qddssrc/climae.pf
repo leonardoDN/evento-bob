@@ -1,0 +1,14 @@
+     A                                      UNIQUE
+     A          R CLIREG                    TEXT('MAESTRO DE CLIENTES')
+     A            CLCLAV         6A
+     A            CLNOMB        40A
+     A            CLRFC         13A
+     A            CLTIPO         1A
+     A            CLZONA         1A
+     A            CLCOND         1A
+     A            CLLIMC        11P 2
+     A            CLSALD        11P 2
+     A            CLVEND         4A
+     A            CLESTA         1A
+     A            CLFALT         8S 0
+     A          K CLCLAV

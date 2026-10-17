@@ -1,0 +1,2 @@
+# el codigo de formato fijo depende de columnas exactas: no convertir fines de linea
+* text eol=lf

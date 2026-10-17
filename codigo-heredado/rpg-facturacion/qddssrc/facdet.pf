@@ -1,0 +1,14 @@
+     A                                      UNIQUE
+     A          R FDEREG                    TEXT('FACTURAS DETALLE')
+     A            FDNUMF         9P 0
+     A            FDRENG         3P 0
+     A            FDARTI        10A
+     A            FDCANT         7P 0
+     A            FDPREC         9P 2
+     A            FDPDES         5P 3
+     A            FDIMPD        11P 2
+     A            FDIMPO        11P 2
+     A            FDTIVA         5P 2
+     A            FDIVA         11P 2
+     A          K FDNUMF
+     A          K FDRENG

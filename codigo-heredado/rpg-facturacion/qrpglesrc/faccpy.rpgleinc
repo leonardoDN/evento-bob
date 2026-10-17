@@ -1,0 +1,42 @@
+     DWFECDS           DS
+     DWFECHA                   1      8S 0
+     D WFANIO                  1      4S 0
+     D WFMES                   5      6S 0
+     D WFDIA                   7      8S 0
+     DWTOPZA           S              9P 0
+     DWBASPZ           S              9P 0
+     DWLIM1            S              7P 0
+     DWLIM2            S              7P 0
+     DWPORCD           S              5P 3
+     DWIMPOR           S             11P 2
+     DWIMDES           S             11P 2
+     DWIMIVA           S             11P 2
+     DWTASIV           S              5P 2
+     DWSUBTO           S             11P 2
+     DWTODES           S             11P 2
+     DWTOIVA           S             11P 2
+     DWTOTAL           S             11P 2
+     DWTMP01           S             15P 5
+     DWTMP02           S             13P 0
+     DWMESP            S              2P 0
+     DWANIOF           S              4P 0
+     DWFECHF           S              8S 0
+     DWFOLIO           S              9P 0
+     DWFOLIN           S              9P 0
+     DWRENG            S              3P 0
+     DWDIAGR           S              3P 0
+     DWPRMVI           S              5P 2
+     DWCOMIS           S             11P 2
+     DWSWERR           S              1A
+     DWSWLIN           S              1A
+     DWUSUAR           S             10A   INZ(*USER)
+     DWCTFAC           S              7S 0
+     DWCTRET           S              7S 0
+     DWCTERR           S              7S 0
+     DWGRTOT           S             13S 2
+     DWPEDER           S              7S 0
+     DWMSGER           S             40A
+     DWMODO            S              1A
+     DCPFOLI           C                   CONST('FOLFAC')
+     DCPDIAG           C                   CONST('DIAGRA')
+     DCPPRMV           C                   CONST('PROMDIC')

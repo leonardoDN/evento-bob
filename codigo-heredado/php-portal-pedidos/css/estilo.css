@@ -1,0 +1,6 @@
+body { font-family: Verdana, Arial; font-size: 12px; margin: 10px; }
+.encabezado { background: #003366; color: #ffffff; }
+.encabezado a { color: #ffcc00; }
+.caja { border: 1px solid #999999; padding: 5px; background: #f0f0f0; }
+.detalle td { border-bottom: 1px solid #cccccc; padding: 3px; }
+.titulo { background: #cccccc; font-weight: bold; }

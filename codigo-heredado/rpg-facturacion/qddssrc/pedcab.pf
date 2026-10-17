@@ -1,0 +1,9 @@
+     A                                      UNIQUE
+     A          R PCAREG                    TEXT('PEDIDOS CABECERA')
+     A            PCNUMP         7P 0
+     A            PCCLAV         6A
+     A            PCFECH         8S 0
+     A            PCALMA         2A
+     A            PCESTA         1A
+     A            PCNUMF         9P 0
+     A          K PCNUMP

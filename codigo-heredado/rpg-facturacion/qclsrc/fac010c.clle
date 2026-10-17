@@ -1,0 +1,27 @@
+             PGM        PARM(&MODO)
+             DCL        VAR(&MODO) TYPE(*CHAR) LEN(1)
+             DCL        VAR(&LIB) TYPE(*CHAR) LEN(10) VALUE('DISTLIB')
+             DCL        VAR(&OUTQ) TYPE(*CHAR) LEN(10) VALUE('PRTFAC')
+             DCL        VAR(&FECHA) TYPE(*CHAR) LEN(6)
+             DCL        VAR(&DIA) TYPE(*CHAR) LEN(2)
+             RTVJOBA    DATE(&FECHA)
+             CHGVAR     VAR(&DIA) VALUE(%SST(&FECHA 5 2))
+             IF         COND(&MODO *EQ ' ') THEN(CHGVAR VAR(&MODO) +
+                          VALUE('N'))
+             ADDLIBLE   LIB(&LIB)
+             MONMSG     MSGID(CPF2103)
+             ALCOBJ     OBJ((&LIB/PEDCAB *FILE *EXCL)) WAIT(60)
+             MONMSG     MSGID(CPF1002) EXEC(DO)
+             SNDPGMMSG  MSG('PEDCAB EN USO, NO SE FACTURO') +
+                          TOMSGQ(QSYSOPR)
+             GOTO       CMDLBL(FIN)
+             ENDDO
+             OVRPRTF    FILE(FAC010P) OUTQ(&OUTQ) HOLD(*YES) +
+                          SAVE(*YES)
+             CALL       PGM(FAC010R) PARM(&MODO)
+             DLTOVR     FILE(FAC010P)
+             DLCOBJ     OBJ((&LIB/PEDCAB *FILE *EXCL))
+             IF         COND(&DIA *EQ '01' *AND &MODO *EQ 'N') +
+                          THEN(SNDPGMMSG MSG('INICIO DE MES: REVISAR +
+                          FOLIOS EN PARAM') TOMSGQ(QSYSOPR))
+ FIN:        ENDPGM

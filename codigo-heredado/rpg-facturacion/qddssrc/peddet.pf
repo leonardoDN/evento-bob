@@ -1,0 +1,9 @@
+     A                                      UNIQUE
+     A          R PDEREG                    TEXT('PEDIDOS DETALLE')
+     A            PDNUMP         7P 0
+     A            PDRENG         3P 0
+     A            PDARTI        10A
+     A            PDCANP         7P 0
+     A            PDCANS         7P 0
+     A          K PDNUMP
+     A          K PDRENG

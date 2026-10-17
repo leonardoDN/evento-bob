@@ -1,0 +1,13 @@
+     A                                      UNIQUE
+     A          R FCAREG                    TEXT('FACTURAS CABECERA')
+     A            FCNUMF         9P 0
+     A            FCNUMP         7P 0
+     A            FCCLAV         6A
+     A            FCFECH         8S 0
+     A            FCSUBT        11P 2
+     A            FCDESC        11P 2
+     A            FCIVA         11P 2
+     A            FCTOTA        11P 2
+     A            FCESTA         1A
+     A            FCUSUA        10A
+     A          K FCNUMF

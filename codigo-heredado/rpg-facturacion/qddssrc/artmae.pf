@@ -1,0 +1,11 @@
+     A                                      UNIQUE
+     A          R ARTREG                    TEXT('MAESTRO DE ARTICULOS')
+     A            ARCLAV        10A
+     A            ARDESC        40A
+     A            ARLINE         3A
+     A            ARUNEM         3A
+     A            ARPREC         9P 2
+     A            ARCOST         9P 2
+     A            ARIVA          1A
+     A            ARESTA         1A
+     A          K ARCLAV

@@ -1,0 +1,7 @@
+     A                                      UNIQUE
+     A          R PARREG                    TEXT('PARAMETROS GENERALES')
+     A            PRCLAV        10A
+     A            PRVALN        11P 4
+     A            PRVALA        30A
+     A            PRFMOD         8S 0
+     A          K PRCLAV
