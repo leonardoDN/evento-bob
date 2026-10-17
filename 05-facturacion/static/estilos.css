@@ -88,3 +88,4 @@ label select { display: block; margin-top: 4px; min-width: 320px; font-weight: n
 .estado { font-size: 12px; padding: 2px 8px; border-radius: 10px; background: #e8eaed; }
 .estado.facturado, .estado.timbrada { background: #defbe6; color: var(--ok); }
 .estado.pendiente { background: #fff1d6; color: #8a5a00; }
+.estado.cancelada { background: #fff1f1; color: var(--error); }

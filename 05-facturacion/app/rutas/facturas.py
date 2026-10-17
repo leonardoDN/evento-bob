@@ -1,8 +1,21 @@
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
 
+from app import pac_simulado
 from app.db import conexion
 from app.pac_simulado import PacNoDisponible
 from app.timbrado import ErrorTimbrado, timbrar_factura
+
+MOTIVOS = {
+    "01": "Comprobante emitido con errores con relación",
+    "02": "Comprobante emitido con errores sin relación",
+    "03": "No se llevó a cabo la operación",
+    "04": "Operación nominativa relacionada en una factura global",
+}
+
+
+class SolicitudCancelacion(BaseModel):
+    motivo: str
 
 router = APIRouter(prefix="/api/facturas", tags=["facturas"])
 
@@ -43,3 +56,34 @@ def timbrar(factura_id: int):
         raise HTTPException(409, str(e))
     except PacNoDisponible as e:
         raise HTTPException(503, str(e))
+
+
+@router.post("/{factura_id}/cancelar")
+def cancelar(factura_id: int, solicitud: SolicitudCancelacion):
+    motivo = solicitud.motivo.strip()
+    if motivo not in "01020304":
+        raise HTTPException(422, "Motivo de cancelación inválido")
+
+    with conexion() as con:
+        factura = con.execute(
+            "SELECT f.*, p.total, p.cliente_id FROM facturas f JOIN pedidos p ON p.id = f.pedido_id "
+            "WHERE f.id = ?",
+            (factura_id,),
+        ).fetchone()
+        if factura is None:
+            raise HTTPException(404, "Factura no encontrada")
+        if factura["estado"] != "timbrada":
+            raise HTTPException(409, "Solo se pueden cancelar facturas timbradas")
+        con.execute("UPDATE clientes SET saldo = saldo - ? WHERE id = ?", (factura["total"], factura["cliente_id"]))
+
+    try:
+        respuesta = pac_simulado.solicitar_cancelacion(factura["uuid"], motivo)
+    except PacNoDisponible as e:
+        raise HTTPException(503, str(e))
+
+    with conexion() as con:
+        con.execute(
+            f"UPDATE facturas SET estado = 'cancelada', motivo_cancelacion = '{motivo}', "
+            f"fecha_cancelacion = '{respuesta['fecha']}' WHERE id = {factura_id}"
+        )
+    return {"factura_id": factura_id, "estado": "cancelada", "motivo": MOTIVOS.get(motivo, motivo)}

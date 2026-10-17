@@ -29,3 +29,10 @@ def solicitar_timbre(xml: str) -> dict:
         "fecha_timbrado": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "sello_sat": "SIMULADO",
     }
+
+
+def solicitar_cancelacion(uuid_cfdi: str, motivo: str) -> dict:
+    time.sleep(random.uniform(DEMORA_MIN, DEMORA_MAX))
+    if random.random() < PROB_FALLA:
+        raise PacNoDisponible("El PAC no respondió (tiempo de espera agotado)")
+    return {"uuid": uuid_cfdi, "estatus": "Cancelado", "fecha": time.strftime("%Y-%m-%dT%H:%M:%S")}

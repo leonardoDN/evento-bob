@@ -37,6 +37,14 @@ def test_no_timbra_dos_veces(cliente_http):
     assert r.status_code == 409
 
 
+def test_cancelar_factura(cliente_http):
+    pedido = cliente_http.post("/api/pedidos", json={"cliente_id": 4, "renglones": [{"sku": "PIN-VIN-19", "cantidad": 1}]}).json()
+    factura = cliente_http.post(f"/api/facturas/desde-pedido/{pedido['id']}").json()
+    r = cliente_http.post(f"/api/facturas/{factura['factura_id']}/cancelar", json={"motivo": "02"})
+    assert r.status_code == 200
+    assert r.json()["estado"] == "cancelada"
+
+
 def test_rfc_duplicado(cliente_http):
     r = cliente_http.post("/api/clientes", json={"rfc": "DNO920315AB1", "razon_social": "X", "codigo_postal": "64000"})
     assert r.status_code == 409

@@ -54,7 +54,9 @@ CREATE TABLE IF NOT EXISTS facturas (
     folio INTEGER NOT NULL,
     uuid TEXT,
     fecha_timbrado TEXT,
-    estado TEXT NOT NULL DEFAULT 'pendiente'
+    estado TEXT NOT NULL DEFAULT 'pendiente',
+    motivo_cancelacion TEXT,
+    fecha_cancelacion TEXT
 );
 """
 

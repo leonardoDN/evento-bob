@@ -132,6 +132,19 @@ async function reintentarTimbrado(facturaId, boton) {
   cargarFacturas();
 }
 
+async function cancelarFactura(facturaId, boton) {
+  const motivo = prompt("Motivo de cancelación (01, 02, 03 o 04):", "02");
+  if (motivo === null) return;
+  boton.disabled = true;
+  try {
+    const r = await api(`/api/facturas/${facturaId}/cancelar`, { method: "POST", body: JSON.stringify({ motivo }) });
+    alert(`Factura cancelada: ${r.motivo}`);
+  } catch (e) {
+    alert(`No se pudo cancelar: ${e.message}`);
+  }
+  cargarFacturas();
+}
+
 async function cargarFacturas() {
   const lista = await api("/api/facturas");
   document.getElementById("lista-facturas").innerHTML = lista
@@ -141,7 +154,8 @@ async function cargarFacturas() {
         <td class="uuid">${f.uuid || "—"}</td>
         <td><span class="estado ${f.estado}">${f.estado}</span></td>
         <td class="num">${pesos.format(f.total)}</td>
-        <td>${f.estado === "pendiente" ? `<button onclick="reintentarTimbrado(${f.id}, this)">Timbrar</button>` : ""}</td>
+        <td>${f.estado === "pendiente" ? `<button onclick="reintentarTimbrado(${f.id}, this)">Timbrar</button>` : ""}
+            ${f.estado === "timbrada" ? `<button class="secundario" onclick="cancelarFactura(${f.id}, this)">Cancelar</button>` : ""}</td>
       </tr>`)
     .join("");
 }
