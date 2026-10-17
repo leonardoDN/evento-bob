@@ -18,6 +18,7 @@ Seguir los ejercicios es opcional. Si prefieres solo observar, todo se hace en p
 | Carpeta | Demostración | De qué se trata |
 |---|---|---|
 | [`codigo-heredado/`](codigo-heredado/) | 1. Lo que nadie quiere tocar | Entender sistemas viejos (RPG, COBOL y PHP) sin leerlos línea por línea |
+| [`pedidos/`](pedidos/) | 2 a 6 | Planear, cambiar, revisar y gobernar una aplicación de pedidos y facturación CFDI 4.0 |
 
 Abre en Bob **la carpeta de cada ejercicio**, no la raíz del repositorio. Cada carpeta trae sus propias instrucciones.
 

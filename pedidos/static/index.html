@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pedidos y facturación</title>
+<link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+<header>
+  <h1>Pedidos y facturación</h1>
+  <nav>
+    <button data-vista="nuevo" class="activa">Nuevo pedido</button>
+    <button data-vista="pedidos">Pedidos</button>
+    <button data-vista="facturas">Facturas</button>
+    <button data-vista="clientes">Clientes</button>
+  </nav>
+</header>
+
+<main>
+  <section id="nuevo" class="vista activa">
+    <h2>Nuevo pedido</h2>
+    <label>Cliente
+      <select id="cliente"></select>
+    </label>
+    <div id="datos-cliente" class="nota"></div>
+
+    <table id="renglones">
+      <thead><tr><th>Producto</th><th>Cantidad</th><th class="num">Precio</th><th class="num">Importe</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <button id="agregar-renglon" class="secundario">Agregar renglón</button>
+
+    <dl id="totales">
+      <dt>Subtotal</dt><dd id="t-subtotal">$0.00</dd>
+      <dt>IVA 16%</dt><dd id="t-iva">$0.00</dd>
+      <dt>Total</dt><dd id="t-total">$0.00</dd>
+    </dl>
+    <button id="guardar-pedido">Guardar pedido</button>
+    <p id="mensaje-pedido" class="mensaje"></p>
+  </section>
+
+  <section id="pedidos" class="vista">
+    <h2>Pedidos</h2>
+    <table>
+      <thead><tr><th>#</th><th>Fecha</th><th>Cliente</th><th>Estado</th><th class="num">Total</th><th></th></tr></thead>
+      <tbody id="lista-pedidos"></tbody>
+    </table>
+  </section>
+
+  <section id="facturas" class="vista">
+    <h2>Facturas</h2>
+    <table>
+      <thead><tr><th>Folio</th><th>Cliente</th><th>RFC</th><th>UUID</th><th>Estado</th><th class="num">Total</th><th></th></tr></thead>
+      <tbody id="lista-facturas"></tbody>
+    </table>
+  </section>
+
+  <section id="clientes" class="vista">
+    <h2>Clientes</h2>
+    <table>
+      <thead><tr><th>RFC</th><th>Razón social</th><th>C.P.</th><th>Uso CFDI</th><th class="num">Saldo</th></tr></thead>
+      <tbody id="lista-clientes"></tbody>
+    </table>
+    <h3>Alta de cliente</h3>
+    <form id="form-cliente">
+      <input name="rfc" placeholder="RFC" required maxlength="13">
+      <input name="razon_social" placeholder="Razón social" required>
+      <input name="codigo_postal" placeholder="C.P." required pattern="\d{5}">
+      <select name="uso_cfdi">
+        <option value="G01">G01 Adquisición de mercancías</option>
+        <option value="G03" selected>G03 Gastos en general</option>
+        <option value="I01">I01 Construcciones</option>
+      </select>
+      <button>Guardar</button>
+    </form>
+    <p id="mensaje-cliente" class="mensaje"></p>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

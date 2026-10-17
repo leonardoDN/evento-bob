@@ -1,0 +1,5 @@
+# Bob no lee ni modifica estos archivos
+.env
+secrets/
+*.key
+config/credentials.json
