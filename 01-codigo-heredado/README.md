@@ -1,4 +1,4 @@
-# Demostración 1: lo que nadie quiere tocar
+# Ejercicio 1: lo que nadie quiere tocar
 
 Tres módulos de sistemas "de toda la vida", escritos como se escribían entonces: sin documentación, con reglas de negocio enterradas en el código y con cambios de varias manos a lo largo de los años. El reto es entenderlos con ayuda de Bob, sin leerlos línea por línea.
 
@@ -26,3 +26,12 @@ Abre **cada módulo en su propia ventana** de Bob (por ejemplo, la carpeta `rpg-
 Compara lo que te responde con lo que encuentres tú en el código. Si Bob afirma algo, pídele que te muestre la línea.
 
 Ninguno de los módulos necesita compilarse ni ejecutarse para el ejercicio, ni requiere un servidor IBM i, un mainframe o una base de datos.
+
+## Volver al estado inicial
+
+```
+git checkout inicio -- 01-codigo-heredado
+git clean -fd 01-codigo-heredado
+```
+
+El segundo comando borra los archivos que haya creado el ejercicio, como el `AGENTS.md` de cada módulo.
