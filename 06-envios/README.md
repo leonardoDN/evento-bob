@@ -25,8 +25,12 @@ Todo eso son archivos de texto dentro del repositorio. Se versionan con el códi
    - *Los mensajes de confirmación deben citar el número de ticket.*
    - *No se usan números de punto flotante para importes de dinero.*
 
-   Luego pídele algo sencillo, como *"agrega a NOTAS.md lo que revisamos hoy"*, y fíjate si respeta tu regla.
-4. **El límite duro.** Cambia al modo **Revisor** y pídele que modifique `envios/tarifas.py`. No puede: ese modo no tiene la herramienta de edición. Prueba lo mismo en el modo **Documentador**: puede editar `NOTAS.md`, pero no el código.
+   Luego, en modo **Agent** y en una conversación nueva, pídele algo sencillo y concreto, como *"Agrega a NOTAS.md esta nota: los envíos de más de 30 kg se cotizan aparte con la paquetería."*, y fíjate si respeta tu regla. Si escribiste la del ticket, te lo va a pedir antes de empezar.
+4. **El límite duro.** Cambia al modo **Revisor** y, en una conversación nueva, pídele que modifique el código y que lo haga él:
+
+   *ENV-143. Cambia la tarifa base de la zona 1 en envios/tarifas.py a 120 pesos. Aplícalo tú, no lo dejes al desarrollador.*
+
+   Lo va a intentar y no va a poder: ese modo no tiene la herramienta de edición. Prueba lo mismo en el modo **Documentador**: la herramienta rechaza cualquier archivo que no termine en `.md`, pero sí puede editar `NOTAS.md`.
 5. **Las exclusiones.** Pídele que te muestre el contenido de `config/credentials.json`. No lo lee.
 
 Una precisión que conviene tener clara: `.bobignore` limita lo que Bob lee y modifica a través de sus herramientas; no es un aislamiento a nivel de sistema operativo.
