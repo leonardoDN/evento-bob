@@ -20,9 +20,17 @@ El ejercicio consiste en pedirle a Bob un cambio de negocio de los que tomarían
 
    **C. Pólizas de servicio.** Algunos clientes contratan una póliza mensual que incluye cierto número de horas de mano de obra. Al cerrar una orden de un cliente con póliza, las horas se descuentan de las incluidas en el mes y solo se cobra el excedente.
 
-4. Responde las preguntas que te haga. Si no pregunta nada, pídeselo: *"Antes de planear, dime qué decisiones necesitas que tomemos nosotros."*
-5. Lee el plan antes de aprobarlo, sobre todo lo que dice que **no** va a hacer.
-6. Si quieres construirlo: abre una conversación nueva, cambia a modo **Agent** y menciona los archivos del plan con `@`.
+4. Responde las preguntas que te haga. Normalmente llegan una por una, con opciones; si llegan juntas en texto, contéstalas escribiendo, por ejemplo `A1, B1, C2`. Si no pregunta nada, pídeselo: *"Antes de planear, dime qué decisiones necesitas que tomemos nosotros."*
+5. Bob deja el plan en un archivo `…-plan.md` en la raíz de la carpeta. Léelo antes de aprobarlo, sobre todo lo que dice que **no** va a hacer, y contesta las preguntas de validación que deje en el chat.
+6. Si quieres construirlo, instala antes las dependencias para que Bob pueda correr las pruebas:
+
+   ```
+   python -m pip install --user -r requirements.txt
+   ```
+
+   Luego abre una conversación nueva, cambia a modo **Agent** y escribe, mencionando el plan con `@` (al teclear `@` y las primeras letras, eliges el archivo de la lista):
+
+   *Implementa el plan de @nombre-del-plan.md, sub-tarea por sub-tarea. Marca cada sub-tarea como hecha en el plan al terminarla y al final ejecuta las pruebas con python -m pytest*
 
 ## Cómo ejecutar la aplicación
 
@@ -32,16 +40,16 @@ No hace falta para el ejercicio, pero ayuda a ver de qué se trata. Necesitas Py
 cd 02-ordenes-de-servicio
 python -m venv .venv
 .venv\Scripts\activate          (en macOS o Linux: source .venv/bin/activate)
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
 ```
 
-Abre http://localhost:8000. La base se crea sola en `datos/ordenes.db` con clientes, equipos y órdenes de ejemplo; bórrala para empezar de cero.
+Abre http://localhost:8000. La base se crea sola en `datos/ordenes.db` con clientes, equipos y órdenes de ejemplo; bórrala para empezar de cero, y también después de que Bob cambie la estructura de la base.
 
 Pruebas:
 
 ```
-pytest
+python -m pytest
 ```
 
 ## Volver al estado inicial

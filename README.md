@@ -13,6 +13,12 @@ Seguir los ejercicios es opcional. Si prefieres solo observar, todo se hace en p
    git clone https://github.com/leonardoDN/evento-bob.git
    ```
 
+3. Opcional, para que Bob te responda siempre en español: crea el archivo `%USERPROFILE%\.bob\rules\idioma.md` (en macOS o Linux, `~/.bob/rules/idioma.md`) con este texto:
+
+   ```
+   Responde siempre en español de México, incluidos los archivos que generes, por ejemplo AGENTS.md.
+   ```
+
 ## Ejercicios
 
 Cada ejercicio es independiente: tiene su propio caso y su propia carpeta, y no depende de lo que haya pasado en los anteriores. Si uno no te sale, pasa al siguiente sin problema.
@@ -26,7 +32,7 @@ Cada ejercicio es independiente: tiene su propio caso y su propia carpeta, y no 
 | [`05-facturacion/`](05-facturacion/) | 5. Encuentre el defecto | Competir contra el agente y revisar una rama de cancelación de CFDI 4.0 |
 | [`06-envios/`](06-envios/) | 6. Las reglas de la casa | Reglas, modos y exclusiones que gobiernan al agente en un módulo de logística |
 
-Abre en Bob **la carpeta de cada ejercicio**, no la raíz del repositorio. Cada carpeta trae sus propias instrucciones.
+Abre en Bob **la carpeta de cada ejercicio**, no la raíz del repositorio; la única excepción es la segunda parte del ejercicio 5, que lo indica. Cada carpeta trae sus propias instrucciones.
 
 Si algo se descompone, cada carpeta explica cómo volver a su estado inicial con la etiqueta `inicio`.
 

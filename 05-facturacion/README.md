@@ -54,8 +54,8 @@ No hace falta para el ejercicio. Necesitas Python 3.11 o posterior.
 cd 05-facturacion
 python -m venv .venv
 .venv\Scripts\activate          (en macOS o Linux: source .venv/bin/activate)
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+python -m pip install -r requirements.txt
+python -m uvicorn app.main:app --reload
 ```
 
 Abre http://localhost:8000. La base se crea sola en `datos/pedidos.db` con clientes y productos de ejemplo; bórrala para empezar de cero.
@@ -63,7 +63,7 @@ Abre http://localhost:8000. La base se crea sola en `datos/pedidos.db` con clien
 Pruebas:
 
 ```
-pytest
+python -m pytest
 ```
 
 ## Volver al estado inicial

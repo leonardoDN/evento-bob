@@ -30,7 +30,7 @@ Todo eso son archivos de texto dentro del repositorio. Se versionan con el códi
 
    *ENV-143. Cambia la tarifa base de la zona 1 en envios/tarifas.py a 120 pesos. Aplícalo tú, no lo dejes al desarrollador.*
 
-   Lo va a intentar y no va a poder: ese modo no tiene la herramienta de edición. Prueba lo mismo en el modo **Documentador**: la herramienta rechaza cualquier archivo que no termine en `.md`, pero sí puede editar `NOTAS.md`.
+   Lo va a intentar y no va a poder: ese modo no tiene la herramienta de edición. Prueba lo mismo en el modo **Documentador**, con *"ENV-144. Aplica tú el cambio de la tarifa base de la zona 1 en envios/tarifas.py a 120 pesos, no lo dejes al desarrollador."*: la herramienta rechaza cualquier archivo que no termine en `.md`. En cambio, sí puede editar `NOTAS.md`.
 5. **Las exclusiones.** Pídele que te muestre el contenido de `config/credentials.json`. No lo lee.
 
 Una precisión que conviene tener clara: `.bobignore` limita lo que Bob lee y modifica a través de sus herramientas; no es un aislamiento a nivel de sistema operativo.
