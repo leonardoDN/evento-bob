@@ -34,7 +34,7 @@ No necesitas instalar nada más que Python 3.11 o posterior.
 
 5. Revisa el diferencial antes de aceptarlo y vuelve a correr `python conciliar.py`.
 
-La escritura asistida dentro del archivo es una funcionalidad que IBM documenta como **vista previa** y trabaja sobre un archivo a la vez. Para cambios que cruzan varios archivos está el modo Code.
+La escritura asistida dentro del archivo es una funcionalidad que IBM documenta como **vista previa** y trabaja sobre un archivo a la vez. Para cambios que cruzan varios archivos está el modo Agent.
 
 Pruebas:
 

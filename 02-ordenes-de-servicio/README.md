@@ -22,7 +22,7 @@ El ejercicio consiste en pedirle a Bob un cambio de negocio de los que tomarían
 
 4. Responde las preguntas que te haga. Si no pregunta nada, pídeselo: *"Antes de planear, dime qué decisiones necesitas que tomemos nosotros."*
 5. Lee el plan antes de aprobarlo, sobre todo lo que dice que **no** va a hacer.
-6. Si quieres construirlo: abre una conversación nueva, cambia a modo **Code** y menciona los archivos del plan con `@`.
+6. Si quieres construirlo: abre una conversación nueva, cambia a modo **Agent** y menciona los archivos del plan con `@`.
 
 ## Cómo ejecutar la aplicación
 

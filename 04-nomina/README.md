@@ -12,21 +12,25 @@ El ejercicio es pedirle a Bob ese cambio y después revisar qué quedó registra
 
 No necesitas instalar nada más que Python 3.11 o posterior.
 
-1. Abre en Bob **la carpeta `04-nomina`**, no la raíz del repositorio.
+1. Abre en Bob **la carpeta `04-nomina`**, no la raíz del repositorio. Si Bob pregunta si quieres abrir el repositorio git de la carpeta superior, responde que sí: sin eso no verás el paso 4.
 2. Mira el cálculo actual:
 
    ```
    python calcular_prestaciones.py 2026-10-20
    ```
 
-3. En modo **Code**, pídele el cambio con tus palabras. Por ejemplo: *"Actualiza el cálculo de días de vacaciones a la reforma de 2023 de la Ley Federal del Trabajo."*
+3. En modo **Agent**, pídele el cambio:
+
+   > Actualiza el cálculo de días de vacaciones a la reforma de 2023 de la Ley Federal del Trabajo: 12 días con un año cumplido, dos más por cada año hasta llegar a 20 con cinco años, y a partir del sexto año, dos más por cada cinco años (de 6 a 10 años, 22; de 11 a 15, 24). Comprueba el resultado con `python calcular_prestaciones.py 2026-10-20`.
+
+   Con la reforma, Gisela Zamora, con 21 años, debe quedar en 28 días.
 
    Si prefieres otro cambio: *"Agrega el cálculo de la prima dominical: 25 % del salario diario por cada domingo trabajado."*
 
 4. Cuando termine, revisa tres cosas:
    - La función que cambió o que se creó.
    - La carpeta `bitacora/`.
-   - El mensaje de confirmación que te propone Bob en el panel de control de versiones.
+   - El mensaje de confirmación: en el panel de control de versiones, pulsa el botón de destellos (✨) junto a la caja del mensaje para que Bob lo proponga.
 
 5. Pregúntate qué le faltaría a ese registro para que lo acepte tu auditor.
 
