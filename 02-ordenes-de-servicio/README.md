@@ -14,9 +14,9 @@ El ejercicio consiste en pedirle a Bob un cambio de negocio de los que tomarían
 2. Cambia a modo **Plan**. En ese modo Bob solo puede leer.
 3. Pídele uno de estos cambios, tal cual o con tus palabras. Ninguno existe hoy en el código y los tres tocan base de datos, API e interfaz:
 
-   **A. Mantenimiento preventivo por horas de operación.** Queremos registrar las lecturas de horómetro de cada equipo y que el sistema abra solo la orden preventiva cuando el equipo llegue a su intervalo de mantenimiento: bombas cada 2,000 horas, compresores cada 4,000 y motores cada 8,000. Las calderas siguen por calendario.
+   **A. Mantenimiento preventivo por horas de operación.** Queremos registrar las lecturas de horómetro de cada equipo y que el sistema abra solo la orden preventiva cuando el equipo acumule, desde su última preventiva, las horas de su intervalo: bombas cada 2,000, compresores cada 4,000 y motores cada 8,000. Al cerrar una preventiva, su lectura se vuelve la nueva base. Las calderas siguen por calendario.
 
-   **B. Equipos sujetos a presión.** Calderas y compresores son recipientes sujetos a presión (NOM-020-STPS-2011). Cada uno debe tener registrado su número de control ante la STPS y la fecha de su próxima prueba de presión. No se puede cerrar una orden sobre uno de esos equipos si le faltan esos datos, y la lista de equipos debe marcar los que tienen la prueba vencida.
+   **B. Equipos sujetos a presión.** Calderas y compresores son recipientes sujetos a presión (NOM-020-STPS-2011). Cada uno debe tener registrado su número de control ante la STPS y la fecha de su próxima prueba de presión. No se puede cerrar una orden sobre uno de esos equipos si le faltan esos datos, y la lista de equipos debe marcar los que tienen la prueba vencida. El número de control es texto libre y los dos datos se capturan desde la vista de equipos, también en los equipos que ya existen. Para los datos de ejemplo: la caldera de Papelera del Norte con la prueba vigente, la de Alimentos La Huerta con la prueba vencida y los compresores sin datos.
 
    **C. Pólizas de servicio.** Algunos clientes contratan una póliza mensual que incluye cierto número de horas de mano de obra. Al cerrar una orden de un cliente con póliza, las horas se descuentan de las incluidas en el mes y solo se cobra el excedente.
 
