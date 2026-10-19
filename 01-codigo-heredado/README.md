@@ -14,8 +14,8 @@ Tres módulos de sistemas "de toda la vida", escritos como se escribían entonce
 
 Abre **cada módulo en su propia ventana** de Bob (por ejemplo, la carpeta `rpg-facturacion`). Así Bob trabaja solo con ese código y nada más.
 
-1. Cambia a modo **Ask**.
-2. Ejecuta `/init` para que Bob analice el módulo y genere su `AGENTS.md`.
+1. En modo **Agent**, ejecuta `/init` para que Bob analice el módulo y genere su `AGENTS.md`. Necesita el modo Agent porque escribe ese archivo; no toca el código. Tarda unos dos minutos.
+2. Cuando termine, cambia a modo **Ask**: en ese modo Bob solo lee.
 3. Pregúntale lo que le preguntarías a la persona que lo escribió. Por ejemplo:
    - ¿Qué hace este programa, en términos de negocio?
    - ¿Qué reglas de descuento o de cálculo aplica, y en qué casos cambian?
@@ -23,7 +23,9 @@ Abre **cada módulo en su propia ventana** de Bob (por ejemplo, la carpeta `rpg-
    - ¿Hay partes que nunca se ejecutan?
    - Si tuviera que cambiar el IVA, ¿qué tendría que tocar?
 
-Compara lo que te responde con lo que encuentres tú en el código. Si Bob afirma algo, pídele que te muestre la línea.
+Compara lo que te responde con lo que encuentres tú en el código. Si Bob afirma algo, pídele que te muestre la línea: *"Muéstrame las líneas exactas."*
+
+Si Bob te responde en inglés, escríbele *"Responde siempre en español"*.
 
 Ninguno de los módulos necesita compilarse ni ejecutarse para el ejercicio, ni requiere un servidor IBM i, un mainframe o una base de datos.
 
