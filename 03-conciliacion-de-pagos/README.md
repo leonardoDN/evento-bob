@@ -25,12 +25,13 @@ No necesitas instalar nada más que Python 3.11 o posterior.
    estado = banco_simulado.consultar_transferencia(pago["clave_rastreo"])
    ```
 
-4. Activa la escritura asistida con el icono de varita, escribe la instrucción en la línea y pulsa **Generate**. Algunas instrucciones para empezar:
-   - *Reintentar hasta tres veces, esperando más entre cada intento.*
-   - *Reintentar y dejar registro de cada intento fallido.*
-   - *Si el banco no responde después de reintentar, marcar el pago como por revisar y seguir con los demás.*
+4. Activa la escritura asistida con el icono de varita, escribe la instrucción en la línea y pulsa **Generate**. Por ejemplo:
 
-   Para probar dos instrucciones a la vez, agrega otra al inicio de la función: *registrar la clave de rastreo y el importe del pago que se va a conciliar*.
+   *Reintentar hasta tres veces, esperando más entre cada intento; si aun así no responde, marcar el pago como por revisar y seguir con los demás.*
+
+   Si solo pides el reintento, la conciliación todavía puede caerse cuando el banco falla tres veces seguidas; por eso conviene decirle también qué hacer en ese caso.
+
+   Para probar dos instrucciones a la vez, inserta una línea justo arriba de la llamada al banco y escribe ahí: *Antes de consultar al banco, imprimir en pantalla la clave de rastreo y el importe del pago.* Pegada a la línea del `def`, Bob tiende a tomarla como descripción de la función.
 
 5. Revisa el diferencial antes de aceptarlo y vuelve a correr `python conciliar.py`.
 
